@@ -24,16 +24,16 @@ export default {
     post: {
       type: Object,
       require: true
-    },
-    likes: {
-        require: true
     }
   },
    data(){
     return {
-        numberOfLikes: this.likes,
+        numberOfLikes: 0,
         user: Object
     }
+  },
+  mounted(){
+      this.numberOfLikes = Math.floor(Math.random() * 50);
   },
   created(){
        axios.get("https://jsonplaceholder.typicode.com/users/"+this.post.userId)

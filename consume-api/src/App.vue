@@ -3,7 +3,6 @@
     <PostCard 
       v-for="post in posts" :key="post.id"
       :post="post"
-      :likes=randomlikes()
     />
   </div>
 </template>
@@ -29,13 +28,7 @@ export default {
       .catch( error => {
         console.error(error)
       })
-  },
-  methods: {
-    randomlikes() {
-          this.likes = Math.floor(Math.random() * 50);
-          return this.likes;
-      }
-  }   
+  }  
 }
 </script>
 
